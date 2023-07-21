@@ -28,13 +28,16 @@
 
 <body>
     <div id="root" class="my-5 text-center">
+
         <h2>Lista</h2>
         <ul>
             <li v-for="(task, i) in tasks" :key="i">{{task}}</li>
         </ul>
 
-        <input type="text">
-        <button type="button">Aggiungi Task</button>
+        <form @submit.prevent="addTask">
+            <input v-model.trim="newTask" type="text">
+            <button type="submit">Aggiungi Task</button>
+        </form>
     </div>
 </body>
 
